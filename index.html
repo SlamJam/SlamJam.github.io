@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Little blog with minds.">
+<meta name="viewport" content="width=device-width">
+<title>Tohas home</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="ru" href="rss.xml">
+<link rel="canonical" href="http://shurp.in/">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="prefetch" href="posts/2018/05/11/no-golang/" type="text/html">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Перейти к главному содержимому</a>
+    <section class="social"><ul>
+<li><a href="#" title="На главную"><i class="fa fa-home"></i></a></li>
+            <li><a href="archive.html" title="Архив"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="categories/index.html" title="Тэги"><i class="fa fa-tags"></i></a></li>
+            <li><a href="rss.xml" title="RSS лента"><i class="fa fa-rss"></i></a></li>
+            <li><a href="https://getnikola.com" title="Обо мне"><i class="fa fa-user"></i></a></li>
+            <li><a href="https://twitter.com/ashurpin" title="Мой Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/SlamJam" title="Мой Github"><i class="fab fa-github"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+    
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2018/05/11/no-golang/" class="u-url">Why not Golang</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/2018/05/11/no-golang/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2018-05-11T03:38:00+03:00" title="2018-05-11 03:38">2018-05-11 03:38</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                Anton Shurpin
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i>             <a href="posts/2018/05/11/no-golang/#disqus_thread" data-disqus-identifier="cache/posts/2018/05/11/golang.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Немножечко набросов и языкового радикализма =). Во многом может резковато, велкам в коменты.</p>
+<p class="more"><a href="posts/2018/05/11/no-golang/">Читать далее…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017/07/19/fractions/" class="u-url">Fractions</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/2017/07/19/fractions/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2017-07-19T06:30:52+03:00" title="2017-07-19 06:30">2017-07-19 06:30</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                Anton Shurpin
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i>             <a href="posts/2017/07/19/fractions/#disqus_thread" data-disqus-identifier="cache/posts/2017/07/19/fractions.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Занятно, но иногда (очень-очень редко) бывают нужны рациональные чиселки. И вот, что пришло в голову:</p>
+<pre class="code python"><a name="rest_code_4216510b2ce848f2949141d29b951010-1"></a><span class="kn">import</span> <span class="nn">itertools</span> <span class="kn">as</span> <span class="nn">it</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-2"></a><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-3"></a>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-4"></a>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-5"></a><span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-6"></a>        <span class="sd">"""Return first n items of the iterable"""</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-7"></a>        <span class="k">return</span> <span class="n">it</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-8"></a>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-9"></a><span class="n">start</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-10"></a><span class="n">step</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-11"></a>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-12"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">take</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">it</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">))):</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-13"></a>        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'{i}: {fr}'</span><span class="p">)</span>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-14"></a>
+<a name="rest_code_4216510b2ce848f2949141d29b951010-15"></a><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Result: {i + Fraction(17, 19)}'</span><span class="p">)</span>
+</pre>
+<p>В консоле получим:</p>
+<pre class="code console"><a name="rest_code_e19f630e936046ecb27ea8311308efd5-1"></a><span class="go">0: 0</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-2"></a><span class="go">1: 1/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-3"></a><span class="go">2: 2/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-4"></a><span class="go">3: 1</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-5"></a><span class="go">4: 4/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-6"></a><span class="go">5: 5/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-7"></a><span class="go">6: 2</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-8"></a><span class="go">7: 7/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-9"></a><span class="go">8: 8/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-10"></a><span class="go">9: 3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-11"></a><span class="go">10: 10/3</span>
+<a name="rest_code_e19f630e936046ecb27ea8311308efd5-12"></a><span class="go">Result: 207/19</span>
+</pre>
+<p>Собственно, когда нам нужно оперировать долями целого, то разумно накапливать результат прямо в рациональных числах, и лишь в конце перейти в <a class="reference external" href="https://docs.python.org/3/library/decimal.html#decimal-objects">Decimal</a>.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2017/06/11/pervyi-post/" class="u-url">Первый пост</a></h1>
+        <div class="metadata">
+            <p class="dateline"><a href="posts/2017/06/11/pervyi-post/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2017-06-11T09:03:55+03:00" title="2017-06-11 09:03">2017-06-11 09:03</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                Anton Shurpin
+            </span></p>
+                <p class="commentline"><i class="fa fa-comment"></i>             <a href="posts/2017/06/11/pervyi-post/#disqus_thread" data-disqus-identifier="cache/posts/2017/06/11/pervyi-post.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>test ✌️.</p>
+    </div>
+    </article>
+</div>
+
+               <script>var disqus_shortname="ashurpin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2018         <a href="mailto:anton.shurpin@gmail.com">Anton Shurpin</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("ru");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
